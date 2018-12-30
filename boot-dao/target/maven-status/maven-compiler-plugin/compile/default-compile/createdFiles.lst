@@ -1,0 +1,15 @@
+com\het\boot\dao\RolePermissionMapper.class
+com\het\boot\dao\entity\RoleDO.class
+com\het\boot\dao\RoleMapper.class
+com\het\boot\dao\UserRoleMapper.class
+com\het\boot\dao\aspect\SetDomain.class
+com\het\boot\dao\aspect\SetDomainAspect.class
+com\het\boot\dao\ProductMapper.class
+com\het\boot\dao\entity\ProductDO.class
+com\het\boot\dao\PermissionMapper.class
+com\het\boot\dao\entity\BaseEntity.class
+com\het\boot\dao\entity\UserDO.class
+com\het\boot\dao\entity\UserRoleDO.class
+com\het\boot\dao\UserMapper.class
+com\het\boot\dao\entity\RolePermissionDO.class
+com\het\boot\dao\entity\PermissionDO.class

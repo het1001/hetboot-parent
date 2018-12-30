@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.het.boot.dao.ProductMapper">
+    <resultMap id="BaseResultMap" type="com.het.boot.dao.entity.ProductDO">
+        <result column="id" jdbcType="BIGINT" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="state" jdbcType="VARCHAR" property="state"/>
+        <result column="start_date" jdbcType="DATE" property="startDate"/>
+        <result column="end_date" jdbcType="DATE" property="endDate"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="create_user" jdbcType="VARCHAR" property="createUser"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="update_user" jdbcType="VARCHAR" property="updateUser"/>
+        <result column="domain" jdbcType="VARCHAR" property="domain"/>
+    </resultMap>
+
+    <insert id="insert" parameterType="com.het.boot.dao.entity.ProductDO">
+        <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.Long">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into hk_product (id, name, state,
+        start_date, end_date, create_time,
+        create_user, update_time, update_user,
+        domain)
+        values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{state,jdbcType=VARCHAR},
+        #{startDate,jdbcType=DATE}, #{endDate,jdbcType=DATE}, CURRENT_TIMESTAMP,
+        #{createUser,jdbcType=VARCHAR}, CURRENT_TIMESTAMP, #{updateUser,jdbcType=VARCHAR},
+        #{domain,jdbcType=VARCHAR})
+    </insert>
+
+    <delete id="delete" parameterType="long">
+        delete from hk_product where id=#{id}
+    </delete>
+
+    <update id="update" parameterType="com.het.boot.dao.entity.ProductDO">
+        update hk_product set name=#{name}, state=#{state}, start_date=#{startDate}, end_date=#{endDate},
+        update_time=CURRENT_TIMESTAMP, update_user=#{updateUser}
+        where id=#{id}
+    </update>
+
+    <select id="getById" resultMap="BaseResultMap">
+        select id, name, state, start_date, end_date, create_time, create_user, update_time, update_user, domain
+        from hk_product where id=#{id} and domain=#{domain}
+    </select>
+
+</mapper>

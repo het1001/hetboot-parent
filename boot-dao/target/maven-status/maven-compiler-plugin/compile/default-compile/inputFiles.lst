@@ -1,0 +1,15 @@
+D:\code\hetboot-parent\boot-dao\src\main\java\com\het\boot\dao\entity\ProductDO.java
+D:\code\hetboot-parent\boot-dao\src\main\java\com\het\boot\dao\entity\RolePermissionDO.java
+D:\code\hetboot-parent\boot-dao\src\main\java\com\het\boot\dao\PermissionMapper.java
+D:\code\hetboot-parent\boot-dao\src\main\java\com\het\boot\dao\aspect\SetDomain.java
+D:\code\hetboot-parent\boot-dao\src\main\java\com\het\boot\dao\UserMapper.java
+D:\code\hetboot-parent\boot-dao\src\main\java\com\het\boot\dao\ProductMapper.java
+D:\code\hetboot-parent\boot-dao\src\main\java\com\het\boot\dao\RoleMapper.java
+D:\code\hetboot-parent\boot-dao\src\main\java\com\het\boot\dao\entity\BaseEntity.java
+D:\code\hetboot-parent\boot-dao\src\main\java\com\het\boot\dao\UserRoleMapper.java
+D:\code\hetboot-parent\boot-dao\src\main\java\com\het\boot\dao\RolePermissionMapper.java
+D:\code\hetboot-parent\boot-dao\src\main\java\com\het\boot\dao\entity\UserDO.java
+D:\code\hetboot-parent\boot-dao\src\main\java\com\het\boot\dao\entity\RoleDO.java
+D:\code\hetboot-parent\boot-dao\src\main\java\com\het\boot\dao\entity\PermissionDO.java
+D:\code\hetboot-parent\boot-dao\src\main\java\com\het\boot\dao\aspect\SetDomainAspect.java
+D:\code\hetboot-parent\boot-dao\src\main\java\com\het\boot\dao\entity\UserRoleDO.java

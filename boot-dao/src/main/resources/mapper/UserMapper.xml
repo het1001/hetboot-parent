@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.het.boot.dao.UserMapper">
+    <resultMap id="BaseResultMap" type="com.het.boot.dao.entity.UserDO">
+        <result column="id" jdbcType="BIGINT" property="id"/>
+        <result column="real_name" jdbcType="VARCHAR" property="realName"/>
+        <result column="sex" jdbcType="VARCHAR" property="sex"/>
+        <result column="id_card_no" jdbcType="VARCHAR" property="idCardNo"/>
+        <result column="phone" jdbcType="VARCHAR" property="phone"/>
+        <result column="standby_phone" jdbcType="VARCHAR" property="standbyPhone"/>
+        <result column="work_id" jdbcType="VARCHAR" property="workId"/>
+        <result column="account" jdbcType="VARCHAR" property="account"/>
+        <result column="pass_word" jdbcType="VARCHAR" property="passWord"/>
+        <result column="job" jdbcType="VARCHAR" property="job"/>
+        <result column="job_level" jdbcType="VARCHAR" property="jobLevel"/>
+        <result column="team_id" jdbcType="BIGINT" property="teamId"/>
+        <result column="work_mail" jdbcType="VARCHAR" property="workMail"/>
+        <result column="hk_mail" jdbcType="VARCHAR" property="hkMail"/>
+        <result column="state" jdbcType="VARCHAR" property="state"/>
+        <result column="last_login_time" jdbcType="TIMESTAMP" property="lastLoginTime"/>
+        <result column="area_zone" jdbcType="VARCHAR" property="areaZone"/>
+        <result column="property" jdbcType="VARCHAR" property="property"/>
+        <result column="entry_date" jdbcType="DATE" property="entryDate"/>
+        <result column="leave_date" jdbcType="DATE" property="leaveDate"/>
+        <result column="biz_zone_id" jdbcType="BIGINT" property="bizZoneId"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="create_user" jdbcType="VARCHAR" property="createUser"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="update_user" jdbcType="VARCHAR" property="updateUser"/>
+        <result column="domain" jdbcType="VARCHAR" property="domain"/>
+    </resultMap>
+    <insert id="insert" parameterType="com.het.boot.dao.entity.UserDO">
+        <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.Long">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into hk_user (id, real_name, sex,
+        id_card_no, phone, standby_phone,
+        work_id, account, pass_word,
+        job, job_level, team_id,
+        work_mail, hk_mail, state,
+        last_login_time, area_zone, property,
+        entry_date, leave_date, biz_zone_id,
+        create_time, create_user, update_time,
+        update_user, domain)
+        values (#{id,jdbcType=BIGINT}, #{realName,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR},
+        #{idCardNo,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{standbyPhone,jdbcType=VARCHAR},
+        #{workId,jdbcType=VARCHAR}, #{account,jdbcType=VARCHAR}, #{passWord,jdbcType=VARCHAR},
+        #{job,jdbcType=VARCHAR}, #{jobLevel,jdbcType=VARCHAR}, #{teamId,jdbcType=BIGINT},
+        #{workMail,jdbcType=VARCHAR}, #{hkMail,jdbcType=VARCHAR}, #{state,jdbcType=VARCHAR},
+        #{lastLoginTime,jdbcType=TIMESTAMP}, #{areaZone,jdbcType=VARCHAR}, #{property,jdbcType=VARCHAR},
+        #{entryDate,jdbcType=DATE}, #{leaveDate,jdbcType=DATE}, #{bizZoneId,jdbcType=BIGINT},
+        CURRENT_TIMESTAMP, #{createUser,jdbcType=VARCHAR}, CURRENT_TIMESTAMP,
+        #{updateUser,jdbcType=VARCHAR}, #{domain,jdbcType=VARCHAR})
+    </insert>
+
+    <delete id="delete">
+        delete from hk_user where id=#{id}
+    </delete>
+
+    <update id="update" parameterType="com.het.boot.dao.entity.UserDO">
+        update hk_user set name=#{name}, state=#{state}, start_date=#{startDate}, end_date=#{endDate},
+        update_time=CURRENT_TIMESTAMP, update_user=#{updateUser}
+        where id=#{id}
+    </update>
+
+    <select id="getById" resultMap="BaseResultMap">
+        select id, real_name, sex, id_card_no, phone, standby_phone, work_id, account, pass_word, job, job_level,
+        team_id, work_mail, hk_mail, state, last_login_time, area_zone, property, entry_date, leave_date, biz_zone_id,
+        create_time, update_time, create_user, update_user, domain
+        from hk_user where id=#{id}
+    </select>
+</mapper>
