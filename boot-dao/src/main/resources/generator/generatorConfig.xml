@@ -36,8 +36,8 @@
         </javaClientGenerator>
 
         <!-- 切记要改两个地方：tableName && domainObjectName -->
-        <table tableName="c_role_permission"
-               domainObjectName="RolePermissionDO"
+        <table tableName="c_system_config"
+               domainObjectName="SystemConfigDO"
                enableCountByExample="false"
                enableUpdateByExample="false"
                enableDeleteByExample="false"

@@ -1,6 +1,5 @@
 package com.het.boot.dao.entity;
 
-import java.io.Serializable;
 import java.util.Date;
 
 /**
